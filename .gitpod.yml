@@ -4,8 +4,7 @@ image:
 tasks:
 - name: Start Couchbase
   before:  cd /opt/couchbase/ && ./start-cb.sh
-- name: Create Bucket
-  before: couchbase-cli bucket-create -c localhost:8091 --username Administrator --password password --bucket default --bucket-type couchbase --bucket-ramsize 256
+  init: couchbase-cli bucket-create -c localhost:8091 --username Administrator --password password --bucket default --bucket-type couchbase --bucket-ramsize 256
 - name: Start app
   init: ./mvnw package -DskipTests
   command: java -jar target/*.jar
