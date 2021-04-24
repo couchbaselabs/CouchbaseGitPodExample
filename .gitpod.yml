@@ -3,11 +3,8 @@ image:
 
 tasks:
 - name: Start Couchbase
-  init:  cd /opt/couchbase/ && ./start-cb.sh
+  prebuild:  cd /opt/couchbase/ && ./start-cb.sh
   command: couchbase-cli bucket-create -c localhost:8091 --username Administrator --password password --bucket default --bucket-type couchbase --bucket-ramsize 256
-- name: Start app
-  init: ./mvnw package -DskipTests
-  command: java -jar target/*.jar
 
 # exposed ports
 ports:
