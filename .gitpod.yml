@@ -5,7 +5,7 @@ tasks:
 - name: Start Couchbase
   before:  cd /opt/couchbase/ && ./start-cb.sh && sleep 20
 - name: Create Bucket
-  init: while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' -u Administrator:password localhost:8091/pools/default/buckets)" != "200" ]]; do sleep 5; done && couchbase-cli bucket-create -c localhost:8091 --username Administrator --password password --bucket default --bucket-type couchbase --bucket-ramsize 256
+  init: while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' -u Administrator:password localhost:8091/pools/default)" != "200" ]]; do sleep 5; done && couchbase-cli bucket-create -c localhost:8091 --username Administrator --password password --bucket default --bucket-type couchbase --bucket-ramsize 256
 # exposed ports
 ports:
 - port: 8091
