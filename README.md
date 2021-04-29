@@ -6,6 +6,8 @@ This repository is an example of how you can use Couchbase inside [Gitpod](https
 
 Simply access the following URL https://gitpod.io/#https://github.com/couchbaselabs/CouchbaseGitPodExample.git
 
+## Docker Image
+The Docker imaged used on this example is described here https://github.com/couchbaselabs/CouchbaseGitPod
 
 ## How it Works
 
